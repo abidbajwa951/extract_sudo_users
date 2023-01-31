@@ -1,0 +1,14 @@
+- name: Get Sudo Users and Write to File
+  hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: Get sudo users
+      script: ~/script.sh
+      args:
+        executable: /bin/bash
+    - name: Fetch Files from Systems
+      fetch:
+        src: /tmp/adminuser.txt
+        dest: /tmp/sudo_users-{{ inventory_hostname }}
+        flat: yes
