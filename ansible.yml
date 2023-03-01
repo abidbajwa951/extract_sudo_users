@@ -4,7 +4,7 @@
   gather_facts: yes
   tasks:
     - name: Get sudo users
-      script: ~/script.sh
+      script: script.sh
       args:
         executable: /bin/bash
     - name: Fetch Files from Systems
